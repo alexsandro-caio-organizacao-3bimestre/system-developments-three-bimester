@@ -19,7 +19,8 @@ def listarProdutos():
     for index in range(len(Produtos)):
         produto = Produtos[index]
 
-        print(f"[{index}] \nNome: {produto.Nome} \nPreço: R${produto.Preco}\n")
+        print(f"[{index}]")
+        produto.exibir()
 
 def comprarProduto():
     print("===== Comprando produto: =====")
@@ -31,7 +32,7 @@ def comprarProduto():
         print("Produto ou quantidade inválida. Tente novamente.")
         return
 
-    print(f"Produto: {produto.Nome} \nPreço unitário: {produto.Preco}")
+    produto.exibir()
     total = produto.Preco * qtd
 
     print(f"\nO total a ser pago é de: R${total}")
@@ -45,9 +46,17 @@ class Produto:
         self.Nome = nome
         self.Preco = preco
 
+    def exibir(self):
+        print(f"Produto: {self.Nome} \nPreço unitário: {self.Preco}")
+
 while True:
     print("\n===== Escolha uma ação: =====\n[1] Cadastrar produto \n[2] Ver produtos \n[3] Comprar produto \n[4] Encerrar programa \n")
-    escolha = int(input())
+    
+    try:
+        escolha = int(input())
+    except:
+        print("Valor inválido. Tente novamente.")
+        continue
 
     if escolha == 1:
         cadastrarProduto()
@@ -64,5 +73,3 @@ while True:
 
     else:
         print("Opção inexistente. Tente novamente.")
-
-    
