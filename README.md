@@ -1,3 +1,3 @@
 <b>Participantes:</b> 
-Caio Alexandre Figueiredo Balassoni
-Alexsandro Damasceno dos Santos
+<ul>Caio Alexandre Figueiredo Balassoni</ul>
+<ul>Alexsandro Damasceno dos Santos</ul>
